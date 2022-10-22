@@ -84,7 +84,7 @@ func main() {
 			&cli.StringFlag{
 				Name:    "out-file",
 				Usage:   "Output file as .csv format to save the car file",
-				Value:   "source.csv",
+				Value:   "./source.csv",
 			},
 			&cli.StringFlag{
 				Name:    "out-dir",
@@ -137,7 +137,7 @@ func main() {
 				return err
 			}
 
-			csvF, err := os.Create(outDir + "/" + outFile)
+			csvF, err := os.Create(outFile)
 			defer csvF.Close()
 			if err != nil {
 				return err
