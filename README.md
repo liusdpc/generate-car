@@ -1,10 +1,10 @@
-# go-generate-car
+# generate-car
 A simple CLI to generate car file and compute commp at the same time.
 
-[![Pull Request](https://github.com/tech-greedy/go-generate-car/actions/workflows/pull-request.yml/badge.svg)](https://github.com/tech-greedy/go-generate-car/actions/workflows/pull-request.yml)
+[![Pull Request](https://github.com/tech-greedy/generate-car/actions/workflows/pull-request.yml/badge.svg)](https://github.com/tech-greedy/generate-car/actions/workflows/pull-request.yml)
 
 ```shell
-$ ./go-generate-car -h
+$ ./generate-car -h
 NAME:
    generate-car - generate car archive from list of files and compute commp in the mean time
 
