@@ -7,3 +7,6 @@ build:
 
 test:
 	bundle2.7 exec rspec -f d
+
+clean:
+	rm -rfv ./generate-car

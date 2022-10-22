@@ -2,6 +2,14 @@ package util
 
 import (
 	"context"
+	"fmt"
+	"io"
+	"math/rand"
+	"os"
+	"path/filepath"
+	"strings"
+	"time"
+
 	"github.com/ipfs/go-blockservice"
 	"github.com/ipfs/go-cid"
 	"github.com/ipfs/go-datastore"
@@ -26,10 +34,6 @@ import (
 	"github.com/ipld/go-ipld-prime/traversal/selector"
 	"github.com/ipld/go-ipld-prime/traversal/selector/builder"
 	"golang.org/x/xerrors"
-	"io"
-	"os"
-	"path/filepath"
-	"strings"
 )
 
 const UnixfsLinksPerLevel = 1 << 10
@@ -324,6 +328,13 @@ func GenerateCar(ctx context.Context, fileList []Finfo, parentPath string, tmpDi
 	}
 	cid = rootIpldNode.Cid().String()
 	return
+}
+
+func ChoiceRandomFile(fileList []Finfo) (file Finfo, size int64) {
+	rand.Seed(time.Now().Unix())
+	var choicedFile = fileList[rand.Intn(len(fileList))]
+	fmt.Println(rand.Intn(len(fileList)))
+	return choicedFile, choicedFile.Size
 }
 
 func allSelector() ipldprime.Node {
