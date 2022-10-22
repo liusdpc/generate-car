@@ -66,7 +66,7 @@ func main() {
 			&cli.Uint64Flag{
 				Name:    "quantity",
 				Aliases: []string{"q"},
-				Usage:   "Quantiry of car files",
+				Usage:   "Quantity of car files",
 				Value:   3,
 			},
 			&cli.Uint64Flag{
