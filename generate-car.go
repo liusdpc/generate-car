@@ -197,11 +197,11 @@ func main() {
 					return err
 				}
 
-				generatedFile := outPath
-				// err = os.Rename(outPath, generatedFile)
-				// if err != nil {
-				// 	return err
-				// }
+				generatedFile := path.Join(outDir, commCid.String() + ".car")
+				err = os.Rename(outPath, generatedFile)
+				if err != nil {
+					return err
+				}
 				elapsed := time.Since(start)
 				fmt.Printf("Generated %d car %s took %s \n", i, generatedFile, elapsed)
 
